@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go/src/features/home/presentation/pages/widgets/slider_motel_tile_widget.dart';
 
 import '../../home.dart';
 
@@ -24,17 +25,39 @@ class HomePage extends StatelessWidget {
               child: MyLocationButton(),
             ),
             Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
                 ),
-                child: ListView(
-                  padding: EdgeInsets.all(15),
-                  children: [],
+                child: Container(
+                  color: Colors.grey.shade50,
+                  child: ListView(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: SliderMotelTileWidget(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: Container(
+                          color: const Color.fromARGB(252, 252, 252, 255),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 15),
+                                child: FiltersBarWidget(),
+                              ),
+                              Divider(color: Colors.grey.shade200, height: 0),
+                              MotelTileWidget(),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
