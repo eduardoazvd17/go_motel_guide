@@ -16,7 +16,7 @@ class SliderMotelTileWidget extends StatelessWidget {
       child: Row(
         spacing: 10,
         children: [
-          Expanded(child: SizedBox()),
+          Expanded(child: Placeholder(fallbackHeight: 200)),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
