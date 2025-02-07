@@ -1,16 +1,21 @@
-# go
+# Flutter Go Motel Guide App
 
-A new Flutter project.
+## Descrição
 
-## Getting Started
+Este projeto é uma réplica da tela de listagem de motéis (aba "Ir Agora") do aplicativo Guia de Motéis GO, desenvolvido utilizando Flutter. 
+A aplicação consome dados uma API mockada e exibe uma lista de motéis disponíveis com detalhes.
 
-This project is a starting point for a Flutter application.
+A aplicação é modularizada e estruturada de forma limpa, utilizando boas práticas do Flutter. A implementação inclui gerenciamento de estado e testes unitários para garantir o correto funcionamento da listagem.
 
-A few resources to get you started if this is your first Flutter project:
+## Funcionalidades
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Listagem de Motéis:** Exibição de motéis com nome, preço e imagem.
+- **Consumo de API:** A aplicação faz requisição para as APIs fornecidas e exibe as informações na tela.
+- **Gerenciamento de Estado:** Utiliza o `Cubit (Bloc)` para gerenciar o estado da listagem de motéis.
+- **Testes Unitários:** Implementação de testes unitários para garantir que os componentes principais da aplicação funcionem corretamente.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+<div style="display: flex; gap: 10px;">
+  <img src="screenshots/1.png" alt="Screenshot 1" width="200px">
+  <img src="screenshots/2.png" alt="Screenshot 2" width="200px">
+</div>
