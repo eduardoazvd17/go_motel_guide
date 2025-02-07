@@ -17,7 +17,9 @@ class HomeRepositoryImpl implements IHomeRepository {
   Future<Result<List<MotelEntity>, ApiError>> getMotelList() async {
     try {
       final result = await _datasource.getMotelList();
-      final resultList = List<Map<String, dynamic>>.from(result['moteis']);
+      final resultList = List<Map<String, dynamic>>.from(
+        result['data']['moteis'],
+      );
       return Success(resultList.map((e) => MotelModel.fromMap(e)).toList());
     } catch (e) {
       return Error(ApiError(message: e.toString()));

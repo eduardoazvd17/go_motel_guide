@@ -15,6 +15,8 @@ class HomeDatasourceImpl implements IHomeDatasource {
   @override
   Future<Map<String, dynamic>> getMotelList() async {
     final response = await _httpClient.get(Uri.parse(Constants.kMockApi));
-    return Map<String, dynamic>.from(jsonDecode(response.body));
+    return Map<String, dynamic>.from(
+      jsonDecode(utf8.decode(response.bodyBytes)),
+    );
   }
 }

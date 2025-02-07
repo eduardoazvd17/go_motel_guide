@@ -12,20 +12,20 @@ class FiltersBarWidget extends StatelessWidget {
         child: Row(
           spacing: 10,
           children: [
-            _item('filtros', icon: Icons.list),
-            _item('com desconto'),
-            _item('disponíveis'),
-            _item('hidro'),
-            _item('piscina'),
-            _item('sauna'),
-            _item('ofurô'),
+            _filterItem('filtros', icon: Icons.list),
+            _filterItem('com desconto'),
+            _filterItem('disponíveis'),
+            _filterItem('hidro'),
+            _filterItem('piscina'),
+            _filterItem('sauna'),
+            _filterItem('ofurô'),
           ],
         ),
       ),
     );
   }
 
-  Widget _item(String title, {IconData? icon}) {
+  Widget _filterItem(String title, {IconData? icon}) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,

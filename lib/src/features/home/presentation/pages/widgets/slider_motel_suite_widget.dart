@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../home.dart';
 
-class SliderMotelTileWidget extends StatelessWidget {
-  const SliderMotelTileWidget({super.key});
+class SliderMotelSuiteWidget extends StatelessWidget {
+  final DiscountSuiteDTO discountSuite;
+  const SliderMotelSuiteWidget({super.key, required this.discountSuite});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,18 @@ class SliderMotelTileWidget extends StatelessWidget {
       child: Row(
         spacing: 10,
         children: [
-          Expanded(child: Placeholder(fallbackHeight: 200)),
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: SizedBox(
+                height: 180,
+                child: Image.network(
+                  discountSuite.image,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+            ),
+          ),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -30,12 +42,10 @@ class SliderMotelTileWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'jumbo hotel',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
+                            discountSuite.name,
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          Text('campinho - rio de janeiro'),
+                          Text(discountSuite.neighborhood),
                         ],
                       ),
                     ),
@@ -43,14 +53,16 @@ class SliderMotelTileWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  '30% de desconto',
+                  '${discountSuite.discount.toStringAsFixed(0)}% de desconto',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text('a partir de R\$ 99,65'),
+                Text(
+                  'a partir de R\$ ${discountSuite.price.toStringAsFixed(2)}',
+                ),
                 const SizedBox(height: 5),
                 Row(
                   children: [

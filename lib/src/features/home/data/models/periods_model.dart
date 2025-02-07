@@ -17,7 +17,7 @@ class PeriodsModel extends PeriodsEntity {
       price: map['valor'],
       totalPrice: map['valorTotal'],
       hasCourtesy: map['temCortesia'],
-      discount: map['desconto'] ?? 0,
+      discount: map['desconto']?['desconto'] ?? 0,
     );
   }
 }
