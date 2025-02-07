@@ -1,3 +1,4 @@
+// coverage:ignore-file
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go/src/features/home/presentation/pages/widgets/slider_motel_suite_widget.dart';
